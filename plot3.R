@@ -9,6 +9,8 @@ subMetering1 <- as.numeric(subsetdata$Sub_metering_1)
 subMetering2 <- as.numeric(subsetdata$Sub_metering_2)
 subMetering3 <- as.numeric(subsetdata$Sub_metering_3)
 
+timeseries <- strptime(paste(subsetdata$Date, subsetdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+
 plot(timeseries, subMetering1, type="l", ylab="Energy Submetering", xlab="")
 lines(timeseries, subMetering2, type="l", col="red")
 lines(timeseries, subMetering3, type="l", col="blue")
